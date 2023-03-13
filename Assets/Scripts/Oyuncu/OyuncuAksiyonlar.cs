@@ -24,12 +24,8 @@ public class OyuncuAksiyonlar : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Merdiven"))
+        if (other.CompareTag("KameraDondurucu"))
         {
-            //
-            Global_variables.state_Update(1);
-
-            //
             Vector3 dir = transform.position - other.transform.position;
             Vector3 hedef = new Vector3(0, 90, 0);
             if (dir.z > .1f) hedef = new Vector3(0, 110, 0);  // 20 ekleyip 20 cıkarıyoruz
@@ -39,12 +35,13 @@ public class OyuncuAksiyonlar : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Merdiven"))
+        if (other.CompareTag("KameraDondurucu"))
         {
             tirmanabilirMi = false;
             OyunYoneticisi.Instance.KameraAcisiniAyarla(new Vector3(0, 90, 0), 1f);
         }
     }
+
 
 }
 

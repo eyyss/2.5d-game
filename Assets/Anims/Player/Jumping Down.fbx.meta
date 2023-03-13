@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d5f122d51bee1b849abfcd61a873b3cb
+guid: 0d506a2e74e4b85409a63a325e469358
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
@@ -7,8 +7,8 @@ ModelImporter:
       74: -203655887218126122
     second: mixamo.com
   - first:
-      74: 3541297829767021732
-    second: Climbing
+      74: -4813966299149231117
+    second: Jumping Down
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -38,11 +38,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Climbing
+      name: Jumping Down
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
-      lastFrame: 115
+      lastFrame: 11
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -52,8 +52,8 @@ ModelImporter:
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
       keepOriginalPositionY: 0
       keepOriginalPositionXZ: 0

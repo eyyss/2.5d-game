@@ -1,14 +1,11 @@
 fileFormatVersion: 2
-guid: d5f122d51bee1b849abfcd61a873b3cb
+guid: 3322e08ffa9fdcd45aa3794d8d98d803
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: mixamo.com
-  - first:
-      74: 3541297829767021732
-    second: Climbing
+    second: Jumping
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -38,11 +35,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Climbing
+      name: Jumping
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
-      lastFrame: 115
+      lastFrame: 77
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -55,13 +52,20 @@ ModelImporter:
       loopBlendPositionY: 0
       loopBlendPositionXZ: 1
       keepOriginalOrientation: 0
-      keepOriginalPositionY: 0
+      keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
-      heightFromFeet: 1
+      heightFromFeet: 0
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.99962246
+        functionName: Kir
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}

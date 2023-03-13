@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Management.Instrumentation;
-using System.Security.Policy;
 using UnityEngine;
 
 public class KarakterHareket : MonoBehaviour
@@ -16,14 +15,12 @@ public class KarakterHareket : MonoBehaviour
     public float donmeHizi;
     public float kureBuyuklugu;
     public float ziplamaGucu;
-    public float isinUzunlugu;
     public bool donebilirmi;
+    public bool yuruyebilirmi;
 
     public KeyCode ziplamaTusu;
 
     public LayerMask yerKatmani;
-
-    public HareketTipleri hareketTipi;
 
     public Collider playerCollider;
     public static Rigidbody rb;
@@ -36,6 +33,7 @@ public class KarakterHareket : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         
         donebilirmi = true;
+        yuruyebilirmi = true; 
     }
 
     private void LateUpdate()
@@ -45,77 +43,68 @@ public class KarakterHareket : MonoBehaviour
         {
             Donus();
         }
-        if (Yerdemi())
-        {
-            Ziplama();
-        }
 
     }
     private void FixedUpdate()
     {
         isinCikisNoktasi = transform.position + Vector3.up / 2;
-        if (hareketTipi== HareketTipleri.yurume)
+        if (yuruyebilirmi)
         {
-            AnimatorTrueFalse("Tirmaniyor", OyuncuAksiyonlar.Instance.tirmanabilirMi);
-            animator.SetFloat("Y", 0);
             Yurumek();
+        }
+        else
+        {
+            rb.velocity = Vector3.zero;
+            animator.SetFloat("Hiz", 0);
         }
     }
 
-
-    private void AnimatorTrueFalse(string animationName,bool a)
-    {
-        animator.SetBool(animationName, a);
-        Debug.Log(animationName+" "+a);
-    }
-    private void Ziplama()
+    private void Update()
     {
         if (Input.GetKeyDown(ziplamaTusu))
         {
+            Ziplama();
+        }
+    }
+    public void Ziplama()
+    {
+        if (Yerdemi())
+        {
             rb.AddForce(transform.up * ziplamaGucu, ForceMode.Impulse);
-            animator.CrossFade("Jump Forward", .1f);
+            animator.CrossFade("Jumping Up", .1f);
         }
     }
 
     private void Yurumek()
     {
-        yatay = -Input.GetAxisRaw("Horizontal");
+        yatay = Mathf.Lerp(yatay, -Input.GetAxis("Horizontal"),Time.deltaTime*6);
         yon = new Vector3(0, 0, yatay);
-        if (Physics.Raycast(isinCikisNoktasi, yon, out RaycastHit hit, isinUzunlugu))
-        {
-            if (hit.collider != null)
-            {
-                animator.SetFloat("Hiz", 0);
-                return;
-            }
-        }
         animator.SetFloat("Hiz", Vector3.ClampMagnitude(yon, 1).magnitude, hareketYumusakligi, Time.deltaTime * 4);
+        rb.velocity = new Vector3(0,rb.velocity.y,yon.z * hareketHizi * Time.deltaTime);
     }
     private void Donus()
     {
         transform.forward = Vector3.Slerp(transform.forward, yon, Time.deltaTime * donmeHizi);
     }
-    private bool Yerdemi()
+    public bool Yerdemi()
     {
         return Physics.CheckSphere(transform.position, kureBuyuklugu,yerKatmani);
     }
-    public void YercekiminiDuzenle(bool sonuc)
+    public void Karaketeriİt(Vector3 yon,float guc)
     {
-        rb.velocity = Vector3.zero;
+        rb.AddForce(yon * guc, ForceMode.Impulse);
+    }
+    public void FizigiDuzenle(bool sonuc)
+    {
+        playerCollider.enabled = sonuc;
         rb.useGravity = sonuc;
     }
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow; 
         Gizmos.DrawWireSphere(transform.position, kureBuyuklugu);
-        Debug.DrawRay(isinCikisNoktasi, transform.forward * isinUzunlugu);
     }
 
 
 }
 
-public enum HareketTipleri
-{
-    yurume,
-    tirmanma
-}
