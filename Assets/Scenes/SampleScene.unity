@@ -3181,6 +3181,7 @@ MonoBehaviour:
   ziplamaGucu: 7
   donebilirmi: 1
   yuruyebilirmi: 0
+  ziplayabilirmi: 0
   ziplamaTusu: 32
   yerKatmani:
     serializedVersion: 2
@@ -3247,8 +3248,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tirmanmaHizi: 1
   rayOffset: {x: 0, y: 1.39, z: 0}
-  assagiRayOffset: {x: 0, y: 1.96, z: -0.5}
-  isinUzunlugu: 0.7
+  assagiRayOffset: {x: 0, y: 1.76, z: -0.5}
+  isinUzunlugu: 0.4
   asagiRayUzunlugu: 2
   zemin:
     serializedVersion: 2

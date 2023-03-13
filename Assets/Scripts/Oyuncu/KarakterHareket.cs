@@ -17,6 +17,7 @@ public class KarakterHareket : MonoBehaviour
     public float ziplamaGucu;
     public bool donebilirmi;
     public bool yuruyebilirmi;
+    public bool ziplayabilirmi;
 
     public KeyCode ziplamaTusu;
 
@@ -33,7 +34,8 @@ public class KarakterHareket : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         
         donebilirmi = true;
-        yuruyebilirmi = true; 
+        yuruyebilirmi = true;
+        ziplayabilirmi = true;
     }
 
     private void LateUpdate()
@@ -68,7 +70,7 @@ public class KarakterHareket : MonoBehaviour
     }
     public void Ziplama()
     {
-        if (Yerdemi())
+        if (Yerdemi()&&ziplayabilirmi)
         {
             rb.AddForce(transform.up * ziplamaGucu, ForceMode.Impulse);
             animator.CrossFade("Jumping Up", .1f);

@@ -1,6 +1,7 @@
 ﻿using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using UnityEngine;
 
 public class Tirmanma : MonoBehaviour
@@ -42,12 +43,16 @@ public class Tirmanma : MonoBehaviour
                     animator.CrossFade("Climbing", .1f);
                     karakterHareket.FizigiDuzenle(false);
                     karakterHareket.donebilirmi = false;
+                    karakterHareket.ziplayabilirmi= false;
+                    animator.MatchTarget(hit.point, Quaternion.identity, 
+                        AvatarTarget.RightHand, new MatchTargetWeightMask(hit.point, .5f),.3f, .5f);
                     yield return new WaitForSeconds(3.2f);
                     animator.applyRootMotion = false;
                     karakterHareket.FizigiDuzenle(true);
                     karakterHareket.Karaketeriİt(transform.forward, 8);
                     karakterHareket.donebilirmi = true;
                     karakterHareket.yuruyebilirmi = true;
+                    karakterHareket.ziplayabilirmi = true;
                 }
                 print("test");
             }
@@ -55,14 +60,15 @@ public class Tirmanma : MonoBehaviour
         }
         t = true; 
         float dikey = Input.GetAxisRaw("Vertical");
-        animator.SetFloat ("Y", dikey);
         float targetZ = hit.point.z+.35f ;
+        animator.SetFloat("Y", dikey);
+        animator.SetBool("Tirmaniyor", true);
         //transform.DOMoveZ(targetZ, .25f);
         if (dikey != 0)
         {
-            animator.SetBool("Tirmaniyor", true);
             karakterHareket.FizigiDuzenle(false);
             karakterHareket.yuruyebilirmi= false;
+            karakterHareket.ziplayabilirmi = false;
             if (dikey>0)
             {
                 transform.Translate(0, Time.deltaTime * tirmanmaHizi * dikey, 0);
@@ -75,10 +81,6 @@ public class Tirmanma : MonoBehaviour
                 }
             }
 
-        }
-        else
-        {
-            animator.SetBool("Tirmaniyor", false);
         }
 
     }
@@ -113,7 +115,7 @@ public class Tirmanma : MonoBehaviour
         {
             if (asagiHit.collider!=null)
             {
-                print(hit.collider.name);
+                karakterHareket.ziplayabilirmi = true;
                 karakterHareket.yuruyebilirmi = true;
                 karakterHareket.FizigiDuzenle(true);
                 return true;
