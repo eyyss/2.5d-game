@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1571198937}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 1.0751041, y: 2.204, z: 0.10800016}
-  m_LocalScale: {x: 1.5878817, y: 0.33122277, z: 3.7170475}
+  m_LocalPosition: {x: 1.079, y: 1.169, z: 0.108}
+  m_LocalScale: {x: 1.5878817, y: 2.249625, z: 3.7170491}
   m_Children: []
   m_Father: {fileID: 7388711838925530659}
   m_RootOrder: 10
@@ -103,7 +103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4246239792466037883}
   m_Layer: 0
-  m_Name: PlayerPosition
+  m_Name: playerPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -117,7 +117,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4516705827317727035}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.182, y: 0.025, z: 0}
+  m_LocalPosition: {x: -0.61, y: 2.295, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7388711838925530659}
@@ -725,7 +725,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7388711838925530659}
   - component: {fileID: 7388711838925530656}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Merdiven
   m_TagString: Merdiven
   m_Icon: {fileID: 0}
