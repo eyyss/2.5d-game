@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 33642863164719520}
   - component: {fileID: 23924409287832830}
   - component: {fileID: 298090723}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SM_Prop_Synty_Cube_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4803705504180976
 Transform:
