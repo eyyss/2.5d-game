@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 794100272}
   m_Layer: 8
   m_Name: BridgeButton
-  m_TagString: Socket
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

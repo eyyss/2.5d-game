@@ -50,6 +50,8 @@ public class PlayerMovementScript : MonoBehaviour
         playerScript.animator.SetBool("IsLanded", IsGrounded());
     }
 
+   
+
     private void ApplyGravity()
     {
         if (characterController.isGrounded)
@@ -141,6 +143,10 @@ public class PlayerMovementScript : MonoBehaviour
             }
         }
         return false;
+    }
+    public bool GetHitResult(int number)
+    {
+        return checkHits[number];
     }
     private void OnDrawGizmosSelected()
     {

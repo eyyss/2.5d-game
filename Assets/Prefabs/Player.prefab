@@ -2512,7 +2512,9 @@ GameObject:
   - component: {fileID: 4312432447814872916}
   - component: {fileID: 4312432447814872917}
   - component: {fileID: 2952070992022531686}
+  - component: {fileID: 2999051779423969659}
   - component: {fileID: 4312432447814872914}
+  - component: {fileID: 2999051779423969651}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -2588,6 +2590,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerScript: {fileID: 4312432447814872914}
   pushForce: 3
+  hitObject: {fileID: 0}
 --- !u!114 &4312432447814872916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2654,12 +2657,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScript: {fileID: 4312432447814872914}
-  maxPickDistance: 1
   objectRotateSpeed: 10
   pushForce: 4
   currentObject: {fileID: 0}
-  handTransform: {fileID: 0}
-  canPick: 0
+--- !u!114 &2999051779423969659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4312432447814872912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04cae5ca57855c34081ffc83f0b4c931, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMaterial: {fileID: 2100000, guid: 60c2f0e0aaa8f8d4e9d23d7e3768653b, type: 2}
+  all:
+  - {fileID: 1066262703212182717}
+  - {fileID: 4525994247952580413}
+  - {fileID: 5495604090282009915}
+  - {fileID: 6773036077044373886}
+  - {fileID: 7214764747015503226}
+  - {fileID: 6567327581459699423}
+  - {fileID: 7723781852576759909}
+  - {fileID: 4188660827608446659}
+  - {fileID: 8258482470477614814}
+  - {fileID: 7871410526585720630}
+  - {fileID: 4209248086903034146}
+  - {fileID: 4805260015871376608}
+  - {fileID: 976227949725854235}
+  - {fileID: 846100234218210184}
+  - {fileID: 1494596491379346284}
+  - {fileID: 6939250121501132747}
+  - {fileID: 4143333600078756614}
+  - {fileID: 4359769084205932888}
+  - {fileID: 882858931269622454}
+  - {fileID: 7518650684608766178}
+  - {fileID: 2950240832956114955}
+  - {fileID: 7406511135738578649}
+  - {fileID: 5087138332733848690}
+  - {fileID: 1823218090730731195}
 --- !u!114 &4312432447814872914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2676,6 +2714,20 @@ MonoBehaviour:
   playerInputScript: {fileID: 4312432447814872917}
   playerColliderScript: {fileID: 3500148869095749100}
   animator: {fileID: 3500148869095749101}
+--- !u!136 &2999051779423969651
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4312432447814872912}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.26
+  m_Height: 0.4
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4325769573722780039
 GameObject:
   m_ObjectHideFlags: 0
